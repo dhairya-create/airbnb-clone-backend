@@ -21,7 +21,7 @@ const cors = require('cors')
 
 app.use(cors({
     credentials: true,
-    origin: env == "development" ? 'http://localhost:5173' : "https://airbnb-clone-backend-f7f9.onrender.com"
+    origin: env == "development" ? 'http://localhost:5173' : "https://airbnb-clone-frontend-eight.vercel.app"
  }))
 
 
