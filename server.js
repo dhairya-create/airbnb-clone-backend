@@ -30,9 +30,6 @@ const port = 4000
 app.use('/users',require("./routes/userRoutes"))
 app.use('/data',require("./routes/dataRoutes"))
 
-// app.get('/test', (req, res) => {
-//     res.json('Parikh')
-// })
 
 
 
