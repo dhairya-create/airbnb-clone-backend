@@ -88,7 +88,9 @@ const addPlace = asyncHandler(async (req, res) => {
           owner: userData.id,
           title,
           address,
-          photos: addedPhotos,
+          photos: addedPhotos.map((item) => {
+            return `${process.env.IMAGE_HOST}/${item}`
+          }),
           description,
           perks,
           extraInfo,
