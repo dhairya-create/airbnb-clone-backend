@@ -7,14 +7,12 @@ const cookieParser = require("cookie-parser")
 
 const env = process.env.NODE_ENV || "development"
 connectDB();
+
+
+
 //defining express app
 const app = express()
 
-app.use(express.json())
-
-app.use(cookieParser())
-
-app.use('/uploads',express.static(__dirname+'/uploads'))
 
 //defining cors
 const cors = require('cors')
@@ -23,6 +21,14 @@ app.use(cors({
     credentials: true,
     origin: env == "development" ? 'http://localhost:5173' : "https://airbnb-clone-frontend-eight.vercel.app"
  }))
+
+
+app.use(express.json())
+
+app.use(cookieParser())
+
+app.use('/uploads',express.static(__dirname+'/uploads'))
+
 
 
 //defining the port
