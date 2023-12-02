@@ -1,11 +1,15 @@
 const express = require('express')
 const connectDB = require("./config/dbConnection")
 
-const dotenv = require("dotenv").config();
+//const dotenv = require("dotenv").config();
 
 const cookieParser = require("cookie-parser")
 
 const env = process.env.NODE_ENV || "development"
+if(env == "development")
+{
+    require("dotenv").config();
+}
 connectDB();
 
 
@@ -32,7 +36,7 @@ app.use('/uploads',express.static(__dirname+'/uploads'))
 
 
 //defining the port
-const port = 4000
+const port = process.env.PORT || 4000;
 
 app.use('/users',require("./routes/userRoutes"))
 app.use('/data',require("./routes/dataRoutes"))
